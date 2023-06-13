@@ -1,44 +1,45 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-// import { getAuth, updateProfile } from "firebase/auth";
-// import { AuthContext } from "../../../../providers/AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
+import { AuthContext } from "../../../providers/AuthProvider";
+
 
 const SignUp = () => {
-//   const { createUser } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
-//   const auth = getAuth();
+  const auth = getAuth();
   const handleSignUp = (event) => {
-    // event.preventDefault();
-    // const form = event.target;
-    // const name = form.name.value;
-    // const photo = form.photo.value;
-    // const email = form.email.value;
-    // const password = form.password.value;
-    // console.log(name, email, password, photo);
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password, photo);
 
-    // createUser(email, password)
-    //   .then((result) => {
-    //     const createdUser = result.user;
-    //     console.log(createdUser);
-    //     updateUserData(name, photo);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     setError(error.message);
-    //   });
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        updateUserData(name, photo);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
 
-    // const updateUserData = (name, photo) => {
-    //   updateProfile(auth.currentUser, {
-    //     displayName: name,
-    //     photoURL: photo,
-    //   })
-    //     .then(() => {
-    //       //  console.log(user);
-    //     })
-    //     .catch((error) => {
-    //       setError(error.massage);
-    //     });
-    // };
+    const updateUserData = (name, photo) => {
+      updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: photo,
+      })
+        .then(() => {
+          //  console.log(user);
+        })
+        .catch((error) => {
+          setError(error.massage);
+        });
+    };
   };
   return (
     <div className="hero min-h-screen">

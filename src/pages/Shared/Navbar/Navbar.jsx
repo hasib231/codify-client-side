@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-// import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
-    const user = false;
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
-    // logOut()
-    //   .then()
-    //   .catch((error) => console.log(error));
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
   };
 
   const navItems = (
@@ -67,20 +66,22 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-3xl my-text ms-12">Sports Club</a>
+        <a className="btn btn-ghost normal-case text-3xl my-text ms-12">
+          Sports Club
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
-      <div className="navbar-end">
-        {/* {user && (
+      <div className="navbar-end me-12">
+        {user?.photoURL && (
           <div
             className="w-10 rounded-full tooltip tooltip-left"
             data-tip={user.displayName}
           >
             <img className="w-10 rounded-full" src={user.photoURL} />
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );
