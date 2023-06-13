@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,7 @@ const SignUp = () => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -118,6 +119,7 @@ const SignUp = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
+                name="password"
                 type="password"
                 {...register("password", {
                   required: true,
@@ -151,6 +153,28 @@ const SignUp = () => {
                 </a>
               </label>
             </div>
+
+            {/* confirm pass */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Confirm Password</span>
+              </label>
+              <input
+                name="confirmPassword"
+                type="password"
+                {...register("confirmPassword", {
+                  required: true,
+                  validate: (value) => value === watch("password"),
+                })}
+                placeholder="Confirm password"
+                className="input input-bordered"
+              />
+              {errors.confirmPassword?.type === "validate" && (
+                <p className="text-red-600">Password not match</p>
+              )}
+
+            </div>
+
             <div className="form-control mt-6">
               <input
                 className="btn btn-primary my-btn"
