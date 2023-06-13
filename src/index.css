@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-btn{
+    /* background: linear-gradient(to right, #33cccc 0%, #0066ff 100%); */
+    background: linear-gradient(to right, #3366ff 0%, #cc99ff 100%);
+    border: none;
+    color: white;
+}
+.my-text{
+    background-image: linear-gradient(45deg, blue ,pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.my-card{
+    /* background: linear-gradient(to top right, #cadff7 0%, #bebdee 100%); */
+    background: linear-gradient(to top right, #00ffff 0%, #ff99ff 100%);
+}
