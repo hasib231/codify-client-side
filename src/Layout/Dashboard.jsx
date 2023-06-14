@@ -29,7 +29,7 @@ const Dashboard = () => {
           drawer
         </label>
       </div>
-      <div className="drawer-side bg-indigo-200 w-4/12">
+      <div className="drawer-side my-drawer w-4/12">
         <label htmlFor="my-drawer-2"></label>
         <ul className="menu p-4 w-80">
           {isAdmin ? (
@@ -81,19 +81,6 @@ const Dashboard = () => {
               </li>
             </>
           )}
-
-          <div className="divider"></div>
-          <li>
-            <NavLink to="/">
-              <FaHome></FaHome> Home
-            </NavLink>{" "}
-          </li>
-          <li>
-            <NavLink to="/menu"> Our Menu</NavLink>
-          </li>
-          <li>
-            <NavLink to="/order/salad">Order Food</NavLink>
-          </li>
         </ul>
       </div>
     </div>

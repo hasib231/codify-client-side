@@ -28,32 +28,28 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
-    ],
-  },
-  {
-    path: "dashboard",
-    element: (   
-        <Dashboard></Dashboard>
-    ),
-    children: [
       {
-        path: "studenthome",
-        element: <StudentHome></StudentHome>,
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: "studenthome",
+            element: <StudentHome></StudentHome>,
+          },
+          {
+            path: "adminhome",
+            element: <AdminHome></AdminHome>,
+          },
+          //   {
+          //     path: "allusers",
+          //     element: (
+          //       <AdminRoute>
+          //         <AllUsers></AllUsers>
+          //       </AdminRoute>
+          //     ),
+          //   },
+        ],
       },
-      {
-        path: "adminhome",
-        element: (
-            <AdminHome></AdminHome>
-        ),
-      },
-    //   {
-    //     path: "allusers",
-    //     element: (
-    //       <AdminRoute>
-    //         <AllUsers></AllUsers>
-    //       </AdminRoute>
-    //     ),
-    //   },
     ],
   },
 ]);
