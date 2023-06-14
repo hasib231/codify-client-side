@@ -58,7 +58,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/allusers">
-                  <FaUsers></FaUsers> All Users
+                  <FaUsers></FaUsers> Manage Users
                 </NavLink>
               </li>
             </>

@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import StudentHome from "../pages/Dashboard/Student/StudentHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import AdminRoute from "./AdminRoute";
+import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 
 
 
@@ -49,14 +50,14 @@ const router = createBrowserRouter([
               </AdminRoute>
             ),
           },
-            // {
-            //   path: "allusers",
-            //   element: (
-            //     <AdminRoute>
-            //       <AllUsers></AllUsers>
-            //     </AdminRoute>
-            //   ),
-            // },
+            {
+              path: "allusers",
+              element: (
+                <AdminRoute>
+                  <AllUsers></AllUsers>
+                </AdminRoute>
+              ),
+            },
         ],
       },
     ],
