@@ -8,14 +8,15 @@ import {
   FaBook,
   FaUsers,
 } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 
-// import useAdmin from "./../hooks/useAdmin";
+
 
 const Dashboard = () => {
 
 
-  const isAdmin = true;
-//   const [isAdmin] = useAdmin();
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="drawer drawer-mobile lg:drawer-open">

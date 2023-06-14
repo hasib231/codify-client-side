@@ -7,6 +7,7 @@ import Dashboard from "../Layout/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import StudentHome from "../pages/Dashboard/Student/StudentHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <Dashboard></Dashboard>,
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
         children: [
           {
             path: "studenthome",
@@ -38,16 +43,20 @@ const router = createBrowserRouter([
           },
           {
             path: "adminhome",
-            element: <AdminHome></AdminHome>,
+            element: (
+              <AdminRoute>
+                <AdminHome></AdminHome>
+              </AdminRoute>
+            ),
           },
-          //   {
-          //     path: "allusers",
-          //     element: (
-          //       <AdminRoute>
-          //         <AllUsers></AllUsers>
-          //       </AdminRoute>
-          //     ),
-          //   },
+            // {
+            //   path: "allusers",
+            //   element: (
+            //     <AdminRoute>
+            //       <AllUsers></AllUsers>
+            //     </AdminRoute>
+            //   ),
+            // },
         ],
       },
     ],
