@@ -38,7 +38,7 @@ const AddClass = () => {
             price: parseFloat(price),
             instructorEmail,
             instructorName,
-            availableSeats,
+            availableSeats: parseInt(availableSeats),
             image: imgURL,
             status: "pending",
             feedback: "No feedback",

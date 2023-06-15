@@ -60,7 +60,7 @@ const ManageClasses = () => {
         Manage Users
       </h1>
       <h3 className="text-2xl font-semibold my-4 text-center">
-        Total Users: {classes.length}
+        Total Class: {classes.length}
       </h3>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
