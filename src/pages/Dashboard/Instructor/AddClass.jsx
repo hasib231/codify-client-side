@@ -41,6 +41,7 @@ const AddClass = () => {
             availableSeats,
             image: imgURL,
             status: "pending",
+            feedback: "No feedback",
           };
           console.log(newClass);
           axiosSecure.post("/class", newClass).then((data) => {
@@ -65,7 +66,7 @@ const AddClass = () => {
       <Helmet>
         <title>Sports Club | Add Class</title>
       </Helmet>
-      <h1 className="text-4xl text-center pb-2 my-text font-semibold">
+      <h1 className="text-4xl text-center pb-2 my-text font-semibold mt-12">
         Add new Class
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
