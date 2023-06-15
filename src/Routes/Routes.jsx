@@ -12,6 +12,7 @@ import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
 import StudentRoute from "./StudentRoute";
+import AddClass from "../pages/Dashboard/Instructor/AddClass";
 
 
 
@@ -66,8 +67,20 @@ const router = createBrowserRouter([
             ),
           },
           {
+            path: "addclass",
+            element: (
+              <InstructorRoute>
+                <AddClass></AddClass>
+              </InstructorRoute>
+            ),
+          },
+          {
             path: "studenthome",
-            element: <StudentRoute><StudentHome></StudentHome></StudentRoute>,
+            element: (
+              <StudentRoute>
+                <StudentHome></StudentHome>
+              </StudentRoute>
+            ),
           },
         ],
       },

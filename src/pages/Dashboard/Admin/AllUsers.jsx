@@ -69,8 +69,8 @@ const AllUsers = () => {
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Role</th>
+              <th>Instructors</th>
+              <th>Admins</th>
             </tr>
           </thead>
           <tbody>
