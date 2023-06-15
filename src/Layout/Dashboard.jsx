@@ -9,14 +9,14 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
-
-
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
-
-
   // const isAdmin = false;
+  // const isInstructor = true;
+  const isStudent = false;
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div className="drawer drawer-mobile lg:drawer-open">
@@ -33,7 +33,8 @@ const Dashboard = () => {
       <div className="drawer-side my-drawer w-4/12">
         <label htmlFor="my-drawer-2"></label>
         <ul className="menu p-4 w-80">
-          {isAdmin ? (
+          {/* Admin */}
+          {isAdmin && (
             <>
               <li>
                 <NavLink to="/dashboard/adminhome">
@@ -62,7 +63,31 @@ const Dashboard = () => {
                 </NavLink>
               </li>
             </>
-          ) : (
+          )}
+
+          {/* Instructor */}
+          {isInstructor && (
+            <>
+              <li>
+                <NavLink to="/dashboard/instructorhome">
+                  <FaHome></FaHome> Instructor Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/addclass">
+                  <FaBook></FaBook> Add Class
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/myclasses">
+                  <FaWallet></FaWallet> My Classes
+                </NavLink>
+              </li>
+            </>
+          )}
+
+          {/* Student */}
+          {isStudent && (
             <>
               <li>
                 <NavLink to="/dashboard/studenthome">

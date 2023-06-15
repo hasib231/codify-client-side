@@ -55,7 +55,7 @@ const AllUsers = () => {
       <Helmet>
         <title>Sports Club | Manage users</title>
       </Helmet>
-      <h1 className="text-4xl text-center pb-5 my-text font-semibold">
+      <h1 className="text-4xl text-center pb-2 my-text font-semibold">
         Manage Users
       </h1>
       <h3 className="text-2xl font-semibold my-4 text-center">
@@ -65,7 +65,7 @@ const AllUsers = () => {
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
-            <tr className="my-drawer">
+            <tr className="my-color1">
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
@@ -85,7 +85,7 @@ const AllUsers = () => {
                   ) : (
                     <button
                       onClick={() => handleMakeInstructor(user)}
-                      className="btn btn-ghost my-btn  text-white"
+                      className="btn btn-sm my-btn  text-white"
                     >
                       <FaUserShield></FaUserShield>
                       Make Instructor
@@ -98,7 +98,7 @@ const AllUsers = () => {
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-ghost my-btn text-white"
+                      className="btn btn-sm my-btn text-white"
                     >
                       <FaUserShield></FaUserShield>
                       Make Admin

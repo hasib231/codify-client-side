@@ -9,6 +9,8 @@ import StudentHome from "../pages/Dashboard/Student/StudentHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import AdminRoute from "./AdminRoute";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
+import InstructorRoute from "./InstructorRoute";
+import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
 
 
 
@@ -39,10 +41,6 @@ const router = createBrowserRouter([
         ),
         children: [
           {
-            path: "studenthome",
-            element: <StudentHome></StudentHome>,
-          },
-          {
             path: "adminhome",
             element: (
               <AdminRoute>
@@ -50,14 +48,26 @@ const router = createBrowserRouter([
               </AdminRoute>
             ),
           },
-            {
-              path: "allusers",
-              element: (
-                <AdminRoute>
-                  <AllUsers></AllUsers>
-                </AdminRoute>
-              ),
-            },
+          {
+            path: "allusers",
+            element: (
+              <AdminRoute>
+                <AllUsers></AllUsers>
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "instructorhome",
+            element: (
+              <InstructorRoute>
+                <InstructorHome></InstructorHome>
+              </InstructorRoute>
+            )
+          },
+          {
+            path: "studenthome",
+            element: <StudentHome></StudentHome>,
+          },
         ],
       },
     ],
