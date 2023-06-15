@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
+import useStudent from "../../../hooks/useStudent";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
-  const isStudent = false;
+  const [isStudent] = useStudent();
 
   const handleLogOut = () => {
     logOut()

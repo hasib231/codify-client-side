@@ -11,6 +11,7 @@ import AdminRoute from "./AdminRoute";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers";
 import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
+import StudentRoute from "./StudentRoute";
 
 
 
@@ -62,11 +63,11 @@ const router = createBrowserRouter([
               <InstructorRoute>
                 <InstructorHome></InstructorHome>
               </InstructorRoute>
-            )
+            ),
           },
           {
             path: "studenthome",
-            element: <StudentHome></StudentHome>,
+            element: <StudentRoute><StudentHome></StudentHome></StudentRoute>,
           },
         ],
       },

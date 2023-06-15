@@ -10,13 +10,15 @@ import {
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
+import useStudent from "../hooks/useStudent";
 
 const Dashboard = () => {
   // const isAdmin = false;
   // const isInstructor = true;
-  const isStudent = false;
+  // const isStudent = true;
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
+  const [isStudent] = useStudent();
 
   return (
     <div className="drawer drawer-mobile lg:drawer-open">
