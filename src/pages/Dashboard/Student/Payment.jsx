@@ -16,7 +16,7 @@ const cart = useLoaderData();
         <title>Sports Club | Payment </title>
       </Helmet>
       <h1 className="text-4xl text-center pb-2 my-text font-semibold my-12">
-        Payment Your Selected Class
+        Pay on of Your Selected Class
       </h1>
       <Elements stripe={stripePromise}> 
           <CheckoutForm cart={cart} price={price}></CheckoutForm>

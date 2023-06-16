@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { FaKey } from "react-icons/fa";
 
 
 
@@ -117,6 +118,7 @@ const CheckoutForm = ({ cart, price }) => {
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
+          <FaKey></FaKey>
           Enroll Now
         </button>
       </form>

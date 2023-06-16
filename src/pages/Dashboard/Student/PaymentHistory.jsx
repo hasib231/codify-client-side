@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import useEnrolledClass from "../../../hooks/useEnrolledClass";
+import moment from "moment";
+
 
 const PaymentHistory = () => {
   const [myClass, refetch] = useEnrolledClass();
@@ -31,7 +33,7 @@ const PaymentHistory = () => {
                 <td>{item.transactionId}</td>
                 <td>{item.className}</td>
                 <td className="">${item.price}</td>
-                <td>{item.date}</td>
+                <td>{moment(item.date).format("YYYY-MM-DD hh:mm:ss")}</td>
               </tr>
             ))}
           </tbody>

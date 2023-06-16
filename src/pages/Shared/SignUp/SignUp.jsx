@@ -24,7 +24,12 @@ const SignUp = () => {
 
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          const saveUser = { name: data.name, email: data.email, role: "student" };
+          const saveUser = {
+            name: data.name,
+            email: data.email,
+            role: "student",
+            image: data.photoURL,
+          };
           fetch("http://localhost:5000/users", {
             method: "POST",
             headers: {
