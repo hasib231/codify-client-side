@@ -4,32 +4,30 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import useStudent from "../hooks/useStudent";
 
-
-const SingelClass = ({ item }) => {
-  const { className, image, price, instructorName,availableSeats
-, _id } = item;
-    const { user } = useContext(AuthContext);
-    const [isStudent] = useStudent();
+const SingleClass = ({ item }) => {
+  const { className, image, price, instructorName, availableSeats, _id } = item;
+  const { user } = useContext(AuthContext);
+  const [isStudent] = useStudent();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleAddToCart = (item) => {
+  const handleSelectClass = (item) => {
     console.log(item);
     if (user && user.email) {
-      const cartItem = {
-        menuItemId: _id,
-
+      const classData = {
+        courseId: _id,
         className,
         image,
         price,
         email: user.email,
+        enrollStatus: "selected"
       };
-      fetch("http://localhost:5000/carts", {
+      fetch("http://localhost:5000/selectedClass", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(cartItem),
+        body: JSON.stringify(classData),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -37,7 +35,7 @@ const SingelClass = ({ item }) => {
             Swal.fire({
               position: "top-end",
               icon: "success",
-              title: "Food added on the cart.",
+              title: "Course selected successful",
               showConfirmButton: false,
               timer: 1500,
             });
@@ -45,7 +43,7 @@ const SingelClass = ({ item }) => {
         });
     } else {
       Swal.fire({
-        title: "Please login to order the food",
+        title: "Please login to select the course",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -81,7 +79,7 @@ const SingelClass = ({ item }) => {
             </button>
           ) : (
             <button
-              onClick={() => handleAddToCart(item)}
+              onClick={() => handleSelectClass(item)}
               className="btn my-btn mt-4"
             >
               Select this course
@@ -93,4 +91,4 @@ const SingelClass = ({ item }) => {
   );
 };
 
-export default SingelClass;
+export default SingleClass;

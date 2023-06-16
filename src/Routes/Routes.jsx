@@ -15,6 +15,8 @@ import StudentRoute from "./StudentRoute";
 import AddClass from "../pages/Dashboard/Instructor/AddClass";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses";
 import Classes from "../pages/Classes/Classes";
+import MySelectedClasses from "../pages/Dashboard/Student/MySelectedClasses";
+import Payment from "../pages/Dashboard/Student/Payment";
 
 
 
@@ -95,6 +97,26 @@ const router = createBrowserRouter([
                 <StudentHome></StudentHome>
               </StudentRoute>
             ),
+          },
+          {
+            path: "mySelectedClasses",
+            element: (
+              <StudentRoute>
+                <MySelectedClasses></MySelectedClasses>
+              </StudentRoute>
+            ),
+          },
+          {
+            path: "payment/:id",
+            element: (
+              <StudentRoute>
+                <Payment></Payment>
+              </StudentRoute>
+            ),
+            loader: ({ params }) =>
+              fetch(
+                `http://localhost:5000/mySelectClass/${params.id}`
+              ),
           },
         ],
       },

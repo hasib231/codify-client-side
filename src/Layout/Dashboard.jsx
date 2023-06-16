@@ -88,10 +88,11 @@ const Dashboard = () => {
               </li>
 
               <li>
-                <NavLink to="/">
-                  <FaCalendarAlt></FaCalendarAlt> Reservations
+                <NavLink to="/dashboard/mySelectedClasses">
+                  <FaCalendarAlt></FaCalendarAlt> My Selected Classes
                 </NavLink>
               </li>
+              
               <li>
                 <NavLink to="/">
                   <FaWallet></FaWallet> Payment History
