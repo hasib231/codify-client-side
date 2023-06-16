@@ -6,30 +6,9 @@ import useMyClass from "../../../hooks/useMyClass";
 
 const MySelectedClasses = () => {
     const [myClass, refetch] = useMyClass();
-  console.log(myClass);
   
     const total = myClass.reduce((sum, item) => item.price + sum, 0);
 
-
-    // const handleEnrollClass = (classData) => {
-    //   fetch(`http://localhost:5000/class/enrollClass/${classData._id}`, {
-    //     method: "PATCH",
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       if (data.modifiedCount) {
-    //         refetch();
-    //         Swal.fire({
-    //           position: "top-end",
-    //           icon: "success",
-    //           title: `${classData.className} class is enrolled!`,
-    //           showConfirmButton: false,
-    //           timer: 1500,
-    //         });
-    //       }
-    //     });
-    // };
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -57,20 +36,20 @@ const MySelectedClasses = () => {
   };
 
   return (
-    <div className="w-11/12">
+    <div className="w-11/12 mb-12">
       <Helmet>
         <title>Sports Club | My Selected classes </title>
       </Helmet>
-      <h1 className="text-4xl text-center pb-2 my-text font-semibold my-12">
+      <h1 className="text-4xl text-center pb-2 my-text font-semibold mt-12 mb-5">
         My Selected Classes
       </h1>
-      <h3 className="text-3xl">Total Items: {myClass.length}</h3>
-      <h3 className="text-3xl">Total Price: ${total}</h3>
+      <h3 className="text-2xl text-center">Total Class: {myClass.length}</h3>
+      <h3 className="text-2xl my-5 text-center">Total Price: ${total}</h3>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="my-color1">
               <th>#</th>
               <th>Image</th>
               <th>Class name</th>

@@ -7,6 +7,7 @@ import {
   FaUtensils,
   FaBook,
   FaUsers,
+  FaCashRegister,
 } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
@@ -92,9 +93,14 @@ const Dashboard = () => {
                   <FaCalendarAlt></FaCalendarAlt> My Selected Classes
                 </NavLink>
               </li>
-              
               <li>
-                <NavLink to="/">
+                <NavLink to="/dashboard/myEnrolledClasses">
+                  <FaCashRegister></FaCashRegister> My Enrolled Classes
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink to="/dashboard/paymentHistory">
                   <FaWallet></FaWallet> Payment History
                 </NavLink>
               </li>

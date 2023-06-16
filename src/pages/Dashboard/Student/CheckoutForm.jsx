@@ -1,13 +1,13 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./CheckoutForm.css";
+
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
+
 const CheckoutForm = ({ cart, price }) => {
-    console.log("cart",cart);
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
@@ -85,9 +85,9 @@ const CheckoutForm = ({ cart, price }) => {
         className: cart.className,
       };
       axiosSecure.post("/payments", payment).then((res) => {
-        console.log(res.data);
-        if (res.data.result.insertedId) {
-          // display confirm
+        // console.log(res.data.result);
+        if ((res.data.result)) {
+          
         }
       });
     }
@@ -95,12 +95,12 @@ const CheckoutForm = ({ cart, price }) => {
 
   return (
     <>
-      <form className="w-2/3 m-8" onSubmit={handleSubmit}>
+      <form className="w-12/12 m-8" onSubmit={handleSubmit}>
         <CardElement
           options={{
             style: {
               base: {
-                fontSize: "16px",
+                fontSize: "18px",
                 color: "#424770",
                 "::placeholder": {
                   color: "#aab7c4",
@@ -113,11 +113,11 @@ const CheckoutForm = ({ cart, price }) => {
           }}
         />
         <button
-          className="btn btn-primary btn-sm mt-4"
+          className="btn my-btn mt-12 "
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
-          Pay
+          Enroll Now
         </button>
       </form>
       {cardError && <p className="text-red-600 ml-8">{cardError}</p>}

@@ -42,6 +42,7 @@ const AddClass = () => {
             image: imgURL,
             status: "pending",
             feedback: "No feedback",
+            totalEnrolledStudents: 0,
           };
           console.log(newClass);
           axiosSecure.post("/class", newClass).then((data) => {
