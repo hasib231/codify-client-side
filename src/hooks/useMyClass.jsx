@@ -18,3 +18,4 @@ const useMyClass = () => {
   return [myClass, refetch];
 };
 export default useMyClass;
+
