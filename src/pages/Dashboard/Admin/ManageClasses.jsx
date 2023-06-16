@@ -52,16 +52,17 @@ const ManageClasses = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full mb-24">
       <Helmet>
         <title>Sports Club | Manage users</title>
       </Helmet>
-      <h1 className="text-4xl text-center pb-2 my-text font-semibold mt-12">
+      <h1 className="text-4xl text-center pb-2 my-text font-semibold mt-5">
         Manage Users
       </h1>
       <h3 className="text-2xl font-semibold my-4 text-center">
         Total Class: {classes.length}
       </h3>
+
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}
@@ -136,6 +137,7 @@ const ManageClasses = () => {
                   <button className="btn  my-btn text-white ">
                     Send Feedback
                   </button>
+                  
                 </td>
               </tr>
             ))}

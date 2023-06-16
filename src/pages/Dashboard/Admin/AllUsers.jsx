@@ -51,11 +51,11 @@ const AllUsers = () => {
   };
 
   return (
-    <div className="w-10/12">
+    <div className="w-10/12 mb-12">
       <Helmet>
         <title>Sports Club | Manage users</title>
       </Helmet>
-      <h1 className="text-4xl text-center pb-2 my-text font-semibold">
+      <h1 className="text-4xl text-center pb-2 my-text font-semibold mt-5">
         Manage Users
       </h1>
       <h3 className="text-2xl font-semibold my-4 text-center">

@@ -2,9 +2,11 @@ import React from 'react';
 
 const AdminHome = () => {
     return (
-        <div>
-            <h1>admin home</h1>
+      <div>
+        <div className="text-7xl mt-36 my-text py-12">
+          Hey Admin! Welcome Back
         </div>
+      </div>
     );
 };
 

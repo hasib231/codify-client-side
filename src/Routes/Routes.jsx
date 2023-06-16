@@ -21,6 +21,7 @@ import MyEnrolledClasses from "../pages/Dashboard/Student/MyEnrolledClasses";
 import PaymentHistory from "../pages/Dashboard/Student/PaymentHistory";
 import InstructorClasses from "../pages/Dashboard/Instructor/InstructorClasses";
 import AllInstructors from "../pages/Instructors/AllInstructors";
+import NotFoundPage from "../pages/Shared/NotFoundPage";
 
 
 
@@ -152,6 +153,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/*",
+    element: <NotFoundPage></NotFoundPage>
+  }
 ]);
 
 export default router;

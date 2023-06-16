@@ -17,7 +17,7 @@ const Classes = () => {
         <title>Sports Club | Classes</title>
       </Helmet>
       <h1 className="text-4xl text-center pb-2 my-text font-semibold my-12">
-        All Instructor Classes
+        All Classes
       </h1>
       <div className="grid md:grid-cols-3 gap-10">
         {classes.map((item) => (
