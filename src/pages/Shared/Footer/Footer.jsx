@@ -7,23 +7,23 @@ const Footer = () => {
         <div>
           <img src={logo} width="50" height="50" alt="" />
           <p>
-            ACME Industries Ltd.
+            Sports Club Ltd.
             <br />
-            Providing reliable tech since 1992
+            Best club for learn sports.
           </p>
         </div>
         <div>
           <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Virtual training</a>
+          <a className="link link-hover"> Live streaming classes</a>
+          <a className="link link-hover">Weight loss programs</a>
+          <a className="link link-hover">Meditation programs</a>
         </div>
         <div>
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Courses</a>
           <a className="link link-hover">Press kit</a>
         </div>
         <div>

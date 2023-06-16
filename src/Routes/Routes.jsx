@@ -23,9 +23,6 @@ import InstructorClasses from "../pages/Dashboard/Instructor/InstructorClasses";
 import AllInstructors from "../pages/Instructors/AllInstructors";
 import NotFoundPage from "../pages/Shared/NotFoundPage";
 
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -147,7 +144,9 @@ const router = createBrowserRouter([
               </StudentRoute>
             ),
             loader: ({ params }) =>
-              fetch(`http://localhost:5000/mySelectClass/${params.id}`),
+              fetch(
+                `https://summer-camp-school-server-side-hasib231.vercel.app/mySelectClass/${params.id}`
+              ),
           },
         ],
       },
@@ -155,8 +154,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: <NotFoundPage></NotFoundPage>
-  }
+    element: <NotFoundPage></NotFoundPage>,
+  },
 ]);
 
 export default router;

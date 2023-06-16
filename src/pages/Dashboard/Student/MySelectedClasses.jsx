@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import useMyClass from "../../../hooks/useMyClass";
 
 const MySelectedClasses = () => {
-    const [myClass, refetch] = useMyClass();
-  
-    const total = myClass.reduce((sum, item) => item.price + sum, 0);
+  const [myClass, refetch] = useMyClass();
 
+  const total = myClass.reduce((sum, item) => item.price + sum, 0);
 
   const handleDelete = (item) => {
     Swal.fire({
@@ -21,9 +20,12 @@ const MySelectedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myClass/${item._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://summer-camp-school-server-side-hasib231.vercel.app/myClass/${item._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {

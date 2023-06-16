@@ -4,7 +4,6 @@ import { useForm, useWatch } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 const SignUp = () => {
   const {
     register,
@@ -13,8 +12,8 @@ const SignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-    const { createUser, updateUserProfile } = useContext(AuthContext);
-    const [error, setError] = useState("");
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
@@ -30,13 +29,16 @@ const SignUp = () => {
             role: "student",
             image: data.photoURL,
           };
-          fetch("http://localhost:5000/users", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(saveUser),
-          })
+          fetch(
+            "https://summer-camp-school-server-side-hasib231.vercel.app/users",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.insertedId) {
@@ -52,9 +54,9 @@ const SignUp = () => {
               }
             });
         })
-          .catch((error) => {
-              console.log(error);
-            setError(error.message);
+        .catch((error) => {
+          console.log(error);
+          setError(error.message);
         });
     });
   };
@@ -177,7 +179,6 @@ const SignUp = () => {
               {errors.confirmPassword?.type === "validate" && (
                 <p className="text-red-600">Password not match</p>
               )}
-
             </div>
 
             <div className="form-control mt-6">
