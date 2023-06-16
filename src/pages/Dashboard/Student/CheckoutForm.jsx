@@ -6,7 +6,8 @@ import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
-const CheckoutForm = ({ cart }) => {
+const CheckoutForm = ({ cart, price }) => {
+    console.log("cart",cart);
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
@@ -17,13 +18,13 @@ const CheckoutForm = ({ cart }) => {
   const [transactionId, setTransactionId] = useState("");
 
   useEffect(() => {
-    
-      axiosSecure.post("/create-payment-intent").then((res) => {
+    if (price > 0) {
+      axiosSecure.post("/create-payment-intent", { price }).then((res) => {
         console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
       });
-    
-  }, [axiosSecure]);
+    }
+  }, [price, axiosSecure]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -75,12 +76,13 @@ const CheckoutForm = ({ cart }) => {
       const payment = {
         email: user?.email,
         transactionId: paymentIntent.id,
+        price,
         date: new Date(),
-        // quantity: cart.length,
-        // cartItems: cart.map((item) => item._id),
-        // menuItems: cart.map((item) => item.menuItemId),
-        // status: "service pending",
-        // itemNames: cart.map((item) => item.name),
+        courseId: cart.courseId,
+        selectedCourseId: cart._id,
+        image: cart.image,
+        status: "service pending",
+        className: cart.className,
       };
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);

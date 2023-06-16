@@ -8,6 +8,7 @@ const MySelectedClasses = () => {
     const [myClass, refetch] = useMyClass();
   console.log(myClass);
   
+    const total = myClass.reduce((sum, item) => item.price + sum, 0);
 
 
     // const handleEnrollClass = (classData) => {
@@ -63,7 +64,8 @@ const MySelectedClasses = () => {
       <h1 className="text-4xl text-center pb-2 my-text font-semibold my-12">
         My Selected Classes
       </h1>
-
+      <h3 className="text-3xl">Total Items: {myClass.length}</h3>
+      <h3 className="text-3xl">Total Price: ${total}</h3>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
