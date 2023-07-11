@@ -5,6 +5,7 @@ import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
 import useStudent from "../../../hooks/useStudent";
 
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin] = useAdmin();
@@ -17,6 +18,7 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
+  
   const navItems = (
     <>
       <li>
@@ -27,6 +29,12 @@ const Navbar = () => {
       </li>
       <li>
         <Link to="/classes"> Classes</Link>
+      </li>
+      <li>
+        <Link to="/problems"> Problems</Link>
+      </li>
+      <li>
+        <Link to="/create"> Add Problem</Link>
       </li>
 
       {isAdmin && (
@@ -86,7 +94,7 @@ const Navbar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-3xl my-text ms-12">
-          Sports Club
+          Codify
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

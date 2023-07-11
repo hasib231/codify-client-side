@@ -1,8 +1,8 @@
-# b712-summer-camp-client-side-hasib231
+# codify-client-side-hasib231
 
-# Website name: Sports Club
+# Website name: codify
 
-# Live site link - https://sports-club-9418c.web.app/
+# Live site link -
 
 # website features: -
 
